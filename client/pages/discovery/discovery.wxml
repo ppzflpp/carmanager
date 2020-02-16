@@ -1,0 +1,29 @@
+<!--pages/discovery/discovery.wxml-->
+<view class='discovery-root-container'>
+  <view wx:for="{{infoList}}" class="class-info-list"  bindtap='onItemClick'>
+
+    <view class='discovery-child-row'>
+      <view class='discovery-child-row-go-container'>
+        <text class='discovery-child-row-title'>{{item.title}}</text>
+        <button class='discovery-child-row-go' bindtap='onGoClick' data-bindex='{{index}}'>到这</button>
+      </view>
+
+      <text class='discovery-child-row-content'>{{item.content}}</text>
+      <image class='discovery-child-row-picture' src='{{item.picture}}'></image>
+
+      <view class='discovery-child-valid-date'>
+        <text class='discovery-child-valid-date-text'>有效期:</text>
+        <text class='discovery-child-row-begin-time'>{{item.beginTime}} 至 </text>
+        <text class='discovery-child-row-end-time'> {{item.endTime}}</text>
+        <text class='discovery-child-row-distance'>{{item.distance}}公里</text>
+      </view>
+      <view class='divider'></view>
+
+    </view>
+
+  </view>
+  <view wx:if="{{isShow}}">
+  <button bindtap='authorizeButton' >获取权限</button>
+  </view>
+
+</view>

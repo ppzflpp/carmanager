@@ -1,0 +1,81 @@
+/* pages/discovery/discovery.wxss */
+.discovery-root-container{
+
+}
+
+.discovery-child-row-title{
+  font-size: 36rpx;
+  width:600rpx;
+}
+
+.discovery-child-row-content{
+  font-size: 32rpx;
+}
+
+.discovery-child-row-picture{
+  width: 715rpx;
+  height: 400rpx;
+  margin-top: 20rpx;
+}
+
+.discovery-child-row-begin-time {
+ font-size: 24rpx;
+ margin-left: 20rpx;
+ width:175rpx;
+}
+
+.discovery-child-row-end-time{
+ font-size: 24rpx;
+ width:300rpx;
+}
+
+.discovery-child-valid-date-text{
+ font-size: 24rpx;
+}
+.discovery-child-valid-date{
+ font-size: 24rpx;
+ margin-top: 20rpx;
+}
+
+.discovery-child-row{
+  display: flex;
+  flex-direction: column;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+
+.discovery-child-valid-date{
+  display: flex;
+  flex-direction: row
+}
+
+.discovery-child-row-go-container{
+  display: flex;
+  flex-direction: row;
+  justify-content:right;
+  justify-items: right;
+  margin-top:20rpx;
+  width: 100%;
+}
+
+.discovery-child-row-distance{
+  font-size: 24rpx;
+}
+.discovery-child-row-go{
+  width: 96rpx;
+  background-color: #4555ff;
+  font-size: 24rpx;
+  text-align: center;
+  color: white;
+  padding:1rpx;
+}
+
+.divider {
+  margin-top: 10rpx;
+  width: 100%;
+  height: 1rpx;
+  background-color:#eeeeee;
+}

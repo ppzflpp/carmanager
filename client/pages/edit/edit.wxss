@@ -1,0 +1,66 @@
+/* pages/edit/edit.wxss */
+
+.class-parent {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  margin-top: 20rpx;
+}
+
+.class-parent-row {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30rpx;
+}
+
+.normal-text {
+  font-size: 32rpx;
+}
+
+.picker {
+  margin-left: 30rpx;
+  font-size: 32rpx;
+  width: 60%;
+    border-style: dashed;
+  border-width: 1px;
+  border-color: #4555ff;
+}
+
+.pick-text {
+  font-size: 32rpx;
+}
+
+.input-text {
+  margin-left: 30rpx;
+  font-size: 32rpx;
+  width: 60%;
+  border-style: dashed;
+  border-width: 1px;
+  border-color: #4555ff;
+}
+
+.textarea-text {
+  margin-left: 30rpx;
+  max-height: 150rpx;
+  width: 60%;
+  border-style: dashed;
+  border-width: 1px;
+  border-color: #4555ff;
+  font-size: 32rpx;
+}
+
+.class-button-row {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50rpx;
+}
+
+.cancel-button {
+  font-size: 32rpx;
+}
+
+.confirm-button {
+  font-size: 32rpx;
+  background-color: #4555ff;
+}

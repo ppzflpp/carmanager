@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view>
+  <view class="container">
+    <view wx:for="{{newsList}}" class="newsList" data-objectid='{{item.objectId}}' bindtap='onItemClick'>
+      <view class='child-row'>
+        <image class='child-row-icon' src='{{imageArray[item.index]}}'></image>
+        <view class='child-row-mid'>
+          <text class='child-row-mid-text-1'>{{item.style}}</text>
+          <text class='child-row-date'>{{item.date}}</text>
+        </view>
+        <text class='child-row-mid-text-2'>{{item.money}}</text>
+        <text class='child-row-mid-text-3'>元</text>
+
+      </view>
+    </view>
+  </view>
+
+  <view class="round-click">
+    <navigator url='/pages/edit/edit'>添加</navigator>
+  </view>
+
+  <view class="empty-content">
+    {{empty_content}}
+  </view>
+
+</view>

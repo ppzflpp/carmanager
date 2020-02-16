@@ -1,0 +1,39 @@
+<!--pages/edit/edit.wxml-->
+<view class='class-parent'>
+<!--消费类型-->
+  <view class='class-parent-row'>
+    <text class='normal-text'>消费类型:</text>
+    <picker class='picker' bindchange='bindPickerStyle' value='{{indexStyle}}' range='{{styleArray}}'>
+      <view class="picker-text">
+        {{styleArray[indexStyle]}}
+      </view>
+    </picker>
+  </view>
+<!--消费日期-->
+  <view class='class-parent-row'>
+    <text class='normal-text'>消费日期:</text>
+    <picker class='picker' mode = 'date' bindchange='bindPickerDate' value='{{currentDate}}' start='2000-01-01' end='2020-01-01'>
+      <view class="picker-text">
+        {{currentDate}}
+      </view>
+    </picker>
+  </view>
+  <!--消费金额-->
+  <view class='class-parent-row'>
+    <text class='normal-text'>消费金额:</text>
+      <input class="input-text" type='digit' bindinput='getMoney' value='{{money}}'>
+      </input>
+  </view>
+  <!--说明消息-->
+  <view class='class-parent-row'>
+    <text class='normal-text'>说明消息:</text>
+      <textarea class="textarea-text" bindinput='getInfo'>{{info}}
+      </textarea>
+  </view>
+
+  <!--按钮信息-->
+  <view class='class-button-row'>
+    <button class='cancel-button' bindtap='cancelButton'>取消</button>
+    <button class='confirm-button' bindtap='confirmButton'>保存</button>
+  </view>
+</view>

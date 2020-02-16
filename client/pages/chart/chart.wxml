@@ -1,0 +1,510 @@
+<!--pages/chart/chart.wxml-->
+<view class="chart-container">
+  <view wx:for='{{itemList}}' class='item-list'>
+    <view class='child-item'>
+      <view class='year-container-class'>
+        <view class='year-container-left-class'>
+          <image src='../../images/zhangdan.png' class='year-image-left'></image>
+          <text class='year-text-class'>{{item.year}}年账单</text>
+        </view>
+
+        <text class='year-text-left-class'>总支出:</text>
+        <text class='year-text-right-class'>{{item.yearMoney}}</text>
+        <text class='year-text-right-class-2'>元</text>
+      </view>
+      <!--12月-->
+      <view class='month-class' wx:if='{{item._12}}'>
+        <view class='month-container-class'>
+          <text class='month-text-left-class'>12月总支出:</text>
+          <text class='month-text-right-class'>{{item._12.monthMoney}}</text>
+          <text class='month-text-right-class-1'>元</text>
+        </view>
+
+        <view class='style-class'>
+          <view class='style-container-class' wx:if='{{item._12.jiayou}}'>
+            <text class='style-text-left-class'>加油费:</text>
+            <text class='style-text-right-class'>{{item._12.jiayou}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._12.xiche}}'>
+            <text class='style-text-left-class'>洗车费:</text>
+            <text class='style-text-right-class'>{{item._12.xiche}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._12.weixiu}}'>
+            <text class='style-text-left-class'>维修费:</text>
+            <text class='style-text-right-class'>{{item._12.weixiu}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._12.baoyang}}'>
+            <text class='style-text-left-class'>保养费:</text>
+            <text class='style-text-right-class'>{{item._12.baoyang}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._12.baoxian}}'>
+            <text class='style-text-left-class'>保险费:</text>
+            <text class='style-text-right-class'>{{item._12.baoxian}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._12.other}}'>
+            <text class='style-text-left-class'>其它:</text>
+            <text class='style-text-right-class'>{{item._12.other}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+        </view>
+      </view>
+      <!--11月-->
+      <view class='month-class' wx:if='{{item._11}}'>
+        <view class='month-container-class'>
+          <text class='month-text-left-class'>11月总支出:</text>
+          <text class='month-text-right-class'>{{item._11.monthMoney}}</text>
+          <text class='month-text-right-class-1'>元</text>
+        </view>
+
+        <view class='style-class'>
+          <view class='style-container-class' wx:if='{{item._11.jiayou}}'>
+            <text class='style-text-left-class'>加油费:</text>
+            <text class='style-text-right-class'>{{item._11.jiayou}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._11.xiche}}'>
+            <text class='style-text-left-class'>洗车费:</text>
+            <text class='style-text-right-class'>{{item._11.xiche}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._11.weixiu}}'>
+            <text class='style-text-left-class'>维修费:</text>
+            <text class='style-text-right-class'>{{item._11.weixiu}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._11.baoyang}}'>
+            <text class='style-text-left-class'>保养费:</text>
+            <text class='style-text-right-class'>{{item._11.baoyang}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._11.baoxian}}'>
+            <text class='style-text-left-class'>保险费:</text>
+            <text class='style-text-right-class'>{{item._11.baoxian}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._11.other}}'>
+            <text class='style-text-left-class'>其它:</text>
+            <text class='style-text-right-class'>{{item._11.other}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+        </view>
+      </view>
+      <!--10月-->
+      <view class='month-class' wx:if='{{item._10}}'>
+        <view class='month-container-class'>
+          <text class='month-text-left-class'>10月总支出:</text>
+          <text class='month-text-right-class'>{{item._10.monthMoney}}</text>
+          <text class='month-text-right-class-1'>元</text>
+        </view>
+
+        <view class='style-class'>
+          <view class='style-container-class' wx:if='{{item._10.jiayou}}'>
+            <text class='style-text-left-class'>加油费:</text>
+            <text class='style-text-right-class'>{{item._10.jiayou}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._10.xiche}}'>
+            <text class='style-text-left-class'>洗车费:</text>
+            <text class='style-text-right-class'>{{item._10.xiche}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._10.weixiu}}'>
+            <text class='style-text-left-class'>维修费:</text>
+            <text class='style-text-right-class'>{{item._10.weixiu}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._10.baoyang}}'>
+            <text class='style-text-left-class'>保养费:</text>
+            <text class='style-text-right-class'>{{item._10.baoyang}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._10.baoxian}}'>
+            <text class='style-text-left-class'>保险费:</text>
+            <text class='style-text-right-class'>{{item._10.baoxian}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._10.other}}'>
+            <text class='style-text-left-class'>其它:</text>
+            <text class='style-text-right-class'>{{item._10.other}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+        </view>
+      </view>
+      <!--9月-->
+      <view class='month-class' wx:if='{{item._9}}'>
+        <view class='month-container-class'>
+          <text class='month-text-left-class'>9月总支出:</text>
+          <text class='month-text-right-class'>{{item._9.monthMoney}}</text>
+          <text class='month-text-right-class-1'>元</text>
+        </view>
+
+        <view class='style-class'>
+          <view class='style-container-class' wx:if='{{item._9.jiayou}}'>
+            <text class='style-text-left-class'>加油费:</text>
+            <text class='style-text-right-class'>{{item._9.jiayou}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._9.xiche}}'>
+            <text class='style-text-left-class'>洗车费:</text>
+            <text class='style-text-right-class'>{{item._9.xiche}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._9.weixiu}}'>
+            <text class='style-text-left-class'>维修费:</text>
+            <text class='style-text-right-class'>{{item._9.weixiu}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._9.baoyang}}'>
+            <text class='style-text-left-class'>保养费:</text>
+            <text class='style-text-right-class'>{{item._9.baoyang}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._9.baoxian}}'>
+            <text class='style-text-left-class'>保险费:</text>
+            <text class='style-text-right-class'>{{item._9.baoxian}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._9.other}}'>
+            <text class='style-text-left-class'>其它:</text>
+            <text class='style-text-right-class'>{{item._9.other}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+        </view>
+      </view>
+      <!--8月-->
+      <view class='month-class' wx:if='{{item._8}}'>
+        <view class='month-container-class'>
+          <text class='month-text-left-class'>8月总支出:</text>
+          <text class='month-text-right-class'>{{item._8.monthMoney}}</text>
+          <text class='month-text-right-class-1'>元</text>
+        </view>
+
+        <view class='style-class'>
+          <view class='style-container-class' wx:if='{{item._8.jiayou}}'>
+            <text class='style-text-left-class'>加油费:</text>
+            <text class='style-text-right-class'>{{item._8.jiayou}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._8.xiche}}'>
+            <text class='style-text-left-class'>洗车费:</text>
+            <text class='style-text-right-class'>{{item._8.xiche}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._8.weixiu}}'>
+            <text class='style-text-left-class'>维修费:</text>
+            <text class='style-text-right-class'>{{item._8.weixiu}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._8.baoyang}}'>
+            <text class='style-text-left-class'>保养费:</text>
+            <text class='style-text-right-class'>{{item._8.baoyang}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._8.baoxian}}'>
+            <text class='style-text-left-class'>保险费:</text>
+            <text class='style-text-right-class'>{{item._8.baoxian}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._8.other}}'>
+            <text class='style-text-left-class'>其它:</text>
+            <text class='style-text-right-class'>{{item._8.other}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+        </view>
+      </view>
+      <!--7月-->
+      <view class='month-class' wx:if='{{item._7}}'>
+        <view class='month-container-class'>
+          <text class='month-text-left-class'>7月总支出:</text>
+          <text class='month-text-right-class'>{{item._7.monthMoney}}</text>
+          <text class='month-text-right-class-1'>元</text>
+        </view>
+
+        <view class='style-class'>
+          <view class='style-container-class' wx:if='{{item._7.jiayou}}'>
+            <text class='style-text-left-class'>加油费:</text>
+            <text class='style-text-right-class'>{{item._7.jiayou}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._7.xiche}}'>
+            <text class='style-text-left-class'>洗车费:</text>
+            <text class='style-text-right-class'>{{item._7.xiche}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._7.weixiu}}'>
+            <text class='style-text-left-class'>维修费:</text>
+            <text class='style-text-right-class'>{{item._7.weixiu}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._7.baoyang}}'>
+            <text class='style-text-left-class'>保养费:</text>
+            <text class='style-text-right-class'>{{item._7.baoyang}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._7.baoxian}}'>
+            <text class='style-text-left-class'>保险费:</text>
+            <text class='style-text-right-class'>{{item._7.baoxian}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._7.other}}'>
+            <text class='style-text-left-class'>其它:</text>
+            <text class='style-text-right-class'>{{item._7.other}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+        </view>
+      </view>
+      <!--6月-->
+      <view class='month-class' wx:if='{{item._6}}'>
+        <view class='month-container-class'>
+          <text class='month-text-left-class'>6月总支出:</text>
+          <text class='month-text-right-class'>{{item._6.monthMoney}}</text>
+          <text class='month-text-right-class-1'>元</text>
+        </view>
+
+        <view class='style-class'>
+          <view class='style-container-class' wx:if='{{item._6.jiayou}}'>
+            <text class='style-text-left-class'>加油费:</text>
+            <text class='style-text-right-class'>{{item._6.jiayou}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._6.xiche}}'>
+            <text class='style-text-left-class'>洗车费:</text>
+            <text class='style-text-right-class'>{{item._6.xiche}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._6.weixiu}}'>
+            <text class='style-text-left-class'>维修费:</text>
+            <text class='style-text-right-class'>{{item._6.weixiu}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._6.baoyang}}'>
+            <text class='style-text-left-class'>保养费:</text>
+            <text class='style-text-right-class'>{{item._6.baoyang}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._6.baoxian}}'>
+            <text class='style-text-left-class'>保险费:</text>
+            <text class='style-text-right-class'>{{item._6.baoxian}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._6.other}}'>
+            <text class='style-text-left-class'>其它:</text>
+            <text class='style-text-right-class'>{{item._6.other}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+        </view>
+      </view>
+      <!--5月-->
+      <view class='month-class' wx:if='{{item._5}}'>
+        <view class='month-container-class'>
+          <text class='month-text-left-class'>5月总支出:</text>
+          <text class='month-text-right-class'>{{item._5.monthMoney}}</text>
+          <text class='month-text-right-class-1'>元</text>
+        </view>
+
+        <view class='style-class'>
+          <view class='style-container-class' wx:if='{{item._5.jiayou}}'>
+            <text class='style-text-left-class'>加油费:</text>
+            <text class='style-text-right-class'>{{item._5.jiayou}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._5.xiche}}'>
+            <text class='style-text-left-class'>洗车费:</text>
+            <text class='style-text-right-class'>{{item._5.xiche}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._5.weixiu}}'>
+            <text class='style-text-left-class'>维修费:</text>
+            <text class='style-text-right-class'>{{item._5.weixiu}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._5.baoyang}}'>
+            <text class='style-text-left-class'>保养费:</text>
+            <text class='style-text-right-class'>{{item._5.baoyang}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._5.baoxian}}'>
+            <text class='style-text-left-class'>保险费:</text>
+            <text class='style-text-right-class'>{{item._5.baoxian}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._5.other}}'>
+            <text class='style-text-left-class'>其它:</text>
+            <text class='style-text-right-class'>{{item._5.other}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+        </view>
+      </view>
+      <!--4月-->
+      <view class='month-class' wx:if='{{item._4}}'>
+        <view class='month-container-class'>
+          <text class='month-text-left-class'>4月总支出:</text>
+          <text class='month-text-right-class'>{{item._4.monthMoney}}</text>
+          <text class='month-text-right-class-1'>元</text>
+        </view>
+
+        <view class='style-class'>
+          <view class='style-container-class' wx:if='{{item._4.jiayou}}'>
+            <text class='style-text-left-class'>加油费:</text>
+            <text class='style-text-right-class'>{{item._4.jiayou}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._4.xiche}}'>
+            <text class='style-text-left-class'>洗车费:</text>
+            <text class='style-text-right-class'>{{item._4.xiche}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._4.weixiu}}'>
+            <text class='style-text-left-class'>维修费:</text>
+            <text class='style-text-right-class'>{{item._4.weixiu}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._4.baoyang}}'>
+            <text class='style-text-left-class'>保养费:</text>
+            <text class='style-text-right-class'>{{item._4.baoyang}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._4.baoxian}}'>
+            <text class='style-text-left-class'>保险费:</text>
+            <text class='style-text-right-class'>{{item._4.baoxian}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._4.other}}'>
+            <text class='style-text-left-class'>其它:</text>
+            <text class='style-text-right-class'>{{item._4.other}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+        </view>
+      </view>
+      <!--3月-->
+      <view class='month-class' wx:if='{{item._3}}'>
+        <view class='month-container-class'>
+          <text class='month-text-left-class'>3月总支出:</text>
+          <text class='month-text-right-class'>{{item._3.monthMoney}}</text>
+          <text class='month-text-right-class-1'>元</text>
+        </view>
+
+        <view class='style-class'>
+          <view class='style-container-class' wx:if='{{item._3.jiayou}}'>
+            <text class='style-text-left-class'>加油费:</text>
+            <text class='style-text-right-class'>{{item._3.jiayou}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._3.xiche}}'>
+            <text class='style-text-left-class'>洗车费:</text>
+            <text class='style-text-right-class'>{{item._3.xiche}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._3.weixiu}}'>
+            <text class='style-text-left-class'>维修费:</text>
+            <text class='style-text-right-class'>{{item._3.weixiu}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._3.baoyang}}'>
+            <text class='style-text-left-class'>保养费:</text>
+            <text class='style-text-right-class'>{{item._3.baoyang}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._3.baoxian}}'>
+            <text class='style-text-left-class'>保险费:</text>
+            <text class='style-text-right-class'>{{item._3.baoxian}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._3.other}}'>
+            <text class='style-text-left-class'>其它:</text>
+            <text class='style-text-right-class'>{{item._3.other}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+        </view>
+      </view>
+      <!--2月-->
+      <view class='month-class' wx:if='{{item._2}}'>
+        <view class='month-container-class'>
+          <text class='month-text-left-class'>2月总支出:</text>
+          <text class='month-text-right-class'>{{item._2.monthMoney}}</text>
+          <text class='month-text-right-class-1'>元</text>
+        </view>
+
+        <view class='style-class'>
+          <view class='style-container-class' wx:if='{{item._2.jiayou}}'>
+            <text class='style-text-left-class'>加油费:</text>
+            <text class='style-text-right-class'>{{item._2.jiayou}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._2.xiche}}'>
+            <text class='style-text-left-class'>洗车费:</text>
+            <text class='style-text-right-class'>{{item._2.xiche}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._2.weixiu}}'>
+            <text class='style-text-left-class'>维修费:</text>
+            <text class='style-text-right-class'>{{item._2.weixiu}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._2.baoyang}}'>
+            <text class='style-text-left-class'>保养费:</text>
+            <text class='style-text-right-class'>{{item._2.baoyang}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._2.baoxian}}'>
+            <text class='style-text-left-class'>保险费:</text>
+            <text class='style-text-right-class'>{{item._2.baoxian}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._2.other}}'>
+            <text class='style-text-left-class'>其它:</text>
+            <text class='style-text-right-class'>{{item._2.other}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+        </view>
+      </view>
+      <!--1月-->
+      <view class='month-class' wx:if='{{item._1}}'>
+        <view class='month-container-class'>
+          <text class='month-text-left-class'>1月总支出:</text>
+          <text class='month-text-right-class'>{{item._1.monthMoney}}</text>
+          <text class='month-text-right-class-1'>元</text>
+        </view>
+
+        <view class='style-class'>
+          <view class='style-container-class' wx:if='{{item._1.jiayou}}'>
+            <text class='style-text-left-class'>加油费:</text>
+            <text class='style-text-right-class'>{{item._1.jiayou}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._1.xiche}}'>
+            <text class='style-text-left-class'>洗车费:</text>
+            <text class='style-text-right-class'>{{item._1.xiche}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._1.weixiu}}'>
+            <text class='style-text-left-class'>维修费:</text>
+            <text class='style-text-right-class'>{{item._1.weixiu}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._1.baoyang}}'>
+            <text class='style-text-left-class'>保养费:</text>
+            <text class='style-text-right-class'>{{item._1.baoyang}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._1.baoxian}}'>
+            <text class='style-text-left-class'>保险费:</text>
+            <text class='style-text-right-class'>{{item._1.baoxian}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+          <view class='style-container-class' wx:if='{{item._1.other}}'>
+            <text class='style-text-left-class'>其它:</text>
+            <text class='style-text-right-class'>{{item._1.other}}</text>
+            <text class='style-text-right-class-1'>元</text>
+          </view>
+        </view>
+      </view>
+      <view class='list-bottom-class'></view>
+    </view>
+  </view>
+</view>
